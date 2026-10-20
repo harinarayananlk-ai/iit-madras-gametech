@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://d3607o3u6mdsj"]
+
+[ext_resource type="Script" uid="uid://fchvwuqd8crc" path="res://end_screen.gd" id="1_afy8x"]
+[ext_resource type="Texture2D" uid="uid://c7ufn2f3v50jb" path="res://time anna.png" id="1_my301"]
+[ext_resource type="Texture2D" uid="uid://dtscvu1j50dfi" path="res://soldier_back.png" id="2_k1na2"]
+[ext_resource type="AudioStream" uid="uid://ny2whvukbhk6" path="res://moojic/victory music.mp3" id="4_pmjk2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xuox8"]
+bg_color = Color(0, 0, 0, 0.54509807)
+
+[node name="End_screen" type="Node2D" unique_id=1302947478]
+script = ExtResource("1_afy8x")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1978416989]
+position = Vector2(575.5, 324.75)
+scale = Vector2(0.41824126, 0.414388)
+texture = ExtResource("1_my301")
+
+[node name="Home button" type="Button" parent="." unique_id=1621367042]
+offset_left = 254.0
+offset_top = 396.0
+offset_right = 445.0
+offset_bottom = 466.60486
+theme_override_font_sizes/font_size = 16
+text = "Return home
+From whence you came"
+
+[node name="Restart Button" type="Button" parent="." unique_id=575825199]
+offset_left = 740.0
+offset_top = 391.0
+offset_right = 997.0
+offset_bottom = 468.0
+text = "Attempt again; fix past mistakes
+Regain your youth and vigour;
+but fight for humanity again
+"
+
+[node name="Label" type="Label" parent="." unique_id=240829029]
+offset_left = 323.0
+offset_top = 256.0
+offset_right = 857.0
+offset_bottom = 335.0
+theme_override_colors/font_color = Color(0.6132581, 0.8370624, 0.35934165, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_xuox8")
+text = "Congrats little one. Your toils and efforts have saved humanity at last. They shall not stray onto the path of polllution and destruction any longer and the future genration will have green fields and clear skies waiting for them; all thanks to you. I now offer you two choices."
+autowrap_mode = 3
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=719867849]
+position = Vector2(567, 580)
+texture = ExtResource("2_k1na2")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=678064395]
+stream = ExtResource("4_pmjk2")
+volume_db = -10.0
+autoplay = true
+
+[connection signal="pressed" from="Home button" to="." method="_on_home_button_pressed"]
+[connection signal="pressed" from="Restart Button" to="." method="_on_restart_button_pressed"]

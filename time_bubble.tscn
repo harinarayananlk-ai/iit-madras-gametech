@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dm4ync0yng64g"]
+
+[ext_resource type="Script" uid="uid://cylidane6idbs" path="res://time_bubble.gd" id="1_ausps"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xuox8"]
+radius = 153.1176
+
+[node name="Time Bubble" type="Area2D" unique_id=302640449]
+script = ExtResource("1_ausps")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1537061319]
+color = Color(0, 0.49411765, 0.39215687, 0.58431375)
+polygon = PackedVector2Array(-2, -153, 30, -149, 69, -135, 90, -125, 113, -102, 126, -84, 139, -65, 150, -36, 154, -11, 151, 32, 138, 70, 112, 106, 84, 129, 43, 147, 0, 152, -41, 146, -78, 134, -107, 112, -128, 80, -147, 44, -152, 1, -148, -42, -133, -82, -112, -109, -79, -133, -44, -146)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1961215075]
+shape = SubResource("CircleShape2D_xuox8")

@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bgwlny4nq0frs"]
+
+[ext_resource type="Script" uid="uid://d2v4b681rxaqq" path="res://time_fragment.gd" id="1_r186h"]
+[ext_resource type="Texture2D" uid="uid://byxo8m17fyudy" path="res://hourglass png.webp" id="2_636dj"]
+[ext_resource type="AudioStream" uid="uid://be6ld864inoyd" path="res://moojic/caught fragment sound.mp3" id="3_kpk1x"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xuox8"]
+radius = 39.012817
+
+[node name="Time Fragment (area2d)" type="Area2D" unique_id=213976985]
+script = ExtResource("1_r186h")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=317495333]
+position = Vector2(0.50000024, 1.5000001)
+scale = Vector2(0.094897956, 0.078571424)
+texture = ExtResource("2_636dj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=642531861]
+shape = SubResource("CircleShape2D_xuox8")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=632601529]
+color = Color(0.8901961, 0.7254902, 0.4117647, 0.3764706)
+polygon = PackedVector2Array(0, -40, 11, -38, 20, -34, 28, -27, 35, -19, 38, -11, 39, 0, 38, 9, 34, 19, 28, 27, 20, 33, 10, 38, 0, 39, -10, 38, -19, 34, -27, 28, -34, 20, -38, 10, -39, 0, -38, -10, -34, -20, -28, -28, -20, -34, -10, -38)
+
+[node name="Caught fragment" type="AudioStreamPlayer" parent="." unique_id=383178671]
+stream = ExtResource("3_kpk1x")
+volume_db = 24.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://wv5gm773jst1"
+path="res://.godot/imported/wall jump sound.mp3-f2acce58465536bd2f362c6168d817ca.mp3str"
+
+[deps]
+
+source_file="res://moojic/wall jump sound.mp3"
+dest_files=["res://.godot/imported/wall jump sound.mp3-f2acce58465536bd2f362c6168d817ca.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

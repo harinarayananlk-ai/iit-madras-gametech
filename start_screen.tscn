@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://b6tlnmnxkp243"]
+
+[ext_resource type="Script" uid="uid://calkb8riv4cuf" path="res://start_screen.gd" id="1_afy8x"]
+[ext_resource type="Texture2D" uid="uid://c7ufn2f3v50jb" path="res://time anna.png" id="1_ncxyx"]
+[ext_resource type="Texture2D" uid="uid://dtscvu1j50dfi" path="res://soldier_back.png" id="2_k1na2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lgw31"]
+bg_color = Color(0, 0, 0, 0.5529412)
+
+[node name="Start screen" type="Node2D" unique_id=1594934055]
+script = ExtResource("1_afy8x")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1907670499]
+position = Vector2(575.75, 328.5)
+scale = Vector2(0.42169333, 0.41861978)
+texture = ExtResource("1_ncxyx")
+
+[node name="Rules button" type="Button" parent="Sprite2D" unique_id=957057777]
+offset_left = 463.01416
+offset_top = 201.8538
+offset_right = 844.8082
+offset_bottom = 376.40594
+theme_override_font_sizes/font_size = 72
+text = "Rules
+"
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1094817450]
+position = Vector2(587, 594)
+scale = Vector2(1.1217202, 1.2228369)
+texture = ExtResource("2_k1na2")
+
+[node name="Label" type="Label" parent="." unique_id=988580841]
+offset_right = 571.0
+offset_bottom = 88.0
+theme_override_font_sizes/font_size = 64
+text = "TIME KEEPER:- "
+
+[node name="label" type="Label" parent="Label" unique_id=22843128]
+layout_mode = 0
+offset_left = 310.0
+offset_top = 78.0
+offset_right = 496.0
+offset_bottom = 109.0
+theme_override_font_sizes/font_size = 16
+text = "The past is running out"
+
+[node name="Start button" type="Button" parent="." unique_id=443407638]
+offset_left = 246.0
+offset_top = 403.0
+offset_right = 439.0
+offset_bottom = 482.0
+theme_override_font_sizes/font_size = 34
+text = "Start Game"
+
+[node name="Label2" type="Label" parent="." unique_id=331064612]
+offset_left = 708.0
+offset_top = 17.0
+offset_right = 1130.0
+offset_bottom = 359.0
+theme_override_colors/font_color = Color(0.27175695, 0.84124625, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_lgw31")
+text = "Humanity once had a future.
+Then came the pollution.
+Year after year, the world was pushed further toward collapse. Forests disappeared. The air darkened. The planet ran out of time.
+But time can be changed.
+The Keeper has been given one final chance:
+Collect the lost seconds.
+Every second recovered pushes the world further back toward the moment before it was too late.
+But there is only so much time left.
+Catch enough. Restore the future."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="How to play" type="CanvasLayer" parent="." unique_id=2139453364]
+visible = false
+
+[node name="Label" type="Label" parent="How to play" unique_id=1852174212]
+offset_left = 110.0
+offset_top = 90.0
+offset_right = 1060.0
+offset_bottom = 633.0
+text = " MOVEMENT:
+W / A / D:- Move and jump.
+SPACE — Wall Jump
+Press SPACE while touching a wall to leap away from it.
+S — Roll : Press S while in the air to perform a roll.
+But beware; as time passes you grow older, losing some of your agility.
+
+TIME ABILITIES
+You have 3 charges for your time abilities. Upon usage you lose 1 charge; but this can be regained after some time passes. You may unlcok the time bubble ability as you continue playing
+E — TIME BUBBLE
+Summon a bubble that affects the flow of time around you.
+But be careful...
+Sometimes the bubble backfires. Not every bubble will work in your favor, so use your charges wisely.
+Q - Time Dash: Dash forward in time to the nearest fragment
+
+ RECLAIM TIME
+Catch falling Time Fragments to gain seconds.Miss them, and time is lost.
+The more seconds you recover, the further the world can be restored. Keep going until you have reclaimed enough time to return the world to a pollution-free state.
+THE FUTURE IS IN YOUR HANDS.
+"
+autowrap_mode = 3
+
+[connection signal="pressed" from="Sprite2D/Rules button" to="." method="_on_rules_button_pressed"]
+[connection signal="pressed" from="Start button" to="." method="_on_start_button_pressed"]

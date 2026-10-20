@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://bbmdjpx8q7i0o"]
+
+[ext_resource type="Script" uid="uid://oinavlpsahc0" path="res://scoresheet.gd" id="1_222x5"]
+[ext_resource type="Script" uid="uid://bo7qo6t3psv5n" path="res://player.gd" id="1_vbr7f"]
+[ext_resource type="Texture2D" uid="uid://dudo8d8osu34n" path="res://soldier_idle.png" id="2_bhep1"]
+[ext_resource type="Script" uid="uid://b2icjnv6pmwt1" path="res://fragment_spawner.gd" id="3_4lxy0"]
+[ext_resource type="PackedScene" uid="uid://bgwlny4nq0frs" path="res://time_fragment.tscn" id="4_222x5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xuox8"]
+size = Vector2(74.75, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lgw31"]
+size = Vector2(1353, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t2kgh"]
+size = Vector2(830, 12.000023)
+
+[node name="node2d" type="Node2D" unique_id=580229209]
+script = ExtResource("1_222x5")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=988478655]
+position = Vector2(0, -290)
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=388865347 groups=["player"]]
+position = Vector2(0, -15)
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_vbr7f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=679026932]
+position = Vector2(4.625, -16)
+shape = SubResource("RectangleShape2D_xuox8")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=1144681260]
+position = Vector2(3.749992, -24.999996)
+scale = Vector2(1.1812497, 1.0545453)
+texture = ExtResource("2_bhep1")
+
+[node name="Floor" type="StaticBody2D" parent="." unique_id=1807748856]
+position = Vector2(-1, 36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=1352723070]
+position = Vector2(54.5, 2.5)
+shape = SubResource("RectangleShape2D_lgw31")
+
+[node name="Walls" type="StaticBody2D" parent="." unique_id=1376374139]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls" unique_id=169218371]
+position = Vector2(581, -303)
+rotation = -1.5707964
+shape = SubResource("RectangleShape2D_t2kgh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls" unique_id=1644899571]
+position = Vector2(-581, -322)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_t2kgh")
+
+[node name="Fragment spawner2" type="Node2D" parent="." unique_id=554589894]
+script = ExtResource("3_4lxy0")
+fragment_scene = ExtResource("4_222x5")
+
+[node name="Timer" type="Timer" parent="Fragment spawner2" unique_id=711806747]
+wait_time = 1.5
+
+[connection signal="timeout" from="Fragment spawner2/Timer" to="Fragment spawner2" method="_on_timer_timeout"]

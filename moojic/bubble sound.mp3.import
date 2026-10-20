@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cctv8svsi8r4a"
+path="res://.godot/imported/bubble sound.mp3-e8e157993e0a79e1ace8d88de252de12.mp3str"
+
+[deps]
+
+source_file="res://moojic/bubble sound.mp3"
+dest_files=["res://.godot/imported/bubble sound.mp3-e8e157993e0a79e1ace8d88de252de12.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
